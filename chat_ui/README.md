@@ -1,4 +1,4 @@
-# new_whatsapp_ui
+# chat_ui
 
 A new Flutter project.
 
