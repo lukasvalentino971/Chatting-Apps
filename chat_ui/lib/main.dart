@@ -142,10 +142,65 @@ class MyHomePage extends StatelessWidget {
                         ),
                       ],
                     ),
+                    SizedBox(
+                      height: 90,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: [
+                          buildContactAvatar('Alla', 'img1.jpeg'),
+                          buildContactAvatar('July', 'img2.jpeg'),
+                          buildContactAvatar('Mikle', 'img3.jpeg'),
+                          buildContactAvatar('Kler', 'img4.jpg'),
+                          buildContactAvatar('Moane', 'img5.jpeg'),
+                          buildContactAvatar('Julie', 'img6.jpeg'),
+                          buildContactAvatar('John', 'img7.jpeg'),
+                        ],
+                      ),
+                    )
                   ],
                 ),
               ))
         ],
+      ),
+    );
+  }
+
+  Padding buildContactAvatar(String name, String filename) {
+    return Padding(
+      padding: const EdgeInsets.only(right: 20.0),
+      child: Column(
+        children: [
+          UserAvatar(
+            filename: filename,
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Text(
+            name,
+            style: TextStyle(color: Colors.white, fontSize: 16),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class UserAvatar extends StatelessWidget {
+  final String filename;
+  const UserAvatar({
+    super.key,
+    required this.filename,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return CircleAvatar(
+      radius: 32,
+      backgroundColor: Colors.white,
+      child: CircleAvatar(
+        radius: 29,
+        backgroundImage: Image.asset('assets/images/$filename').image,
       ),
     );
   }
