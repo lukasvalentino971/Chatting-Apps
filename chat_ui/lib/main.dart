@@ -24,7 +24,7 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF171717),
-      body: Column(
+      body: Stack(
         children: [
           Column(
             children: [
@@ -112,6 +112,39 @@ class MyHomePage extends StatelessWidget {
               ),
             ],
           ),
+          Positioned(
+              top: 190,
+              left: 0,
+              right: 0,
+              child: Container(
+                padding: const EdgeInsets.only(top: 15, left: 25, right: 25),
+                height: 220,
+                decoration: const BoxDecoration(
+                    color: Color(0xFF27c1a9),
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(40),
+                        topRight: Radius.circular(40))),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text(
+                          "Favorite Contacts",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        IconButton(
+                          onPressed: () {},
+                          icon: const Icon(
+                            Icons.more_horiz,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ))
         ],
       ),
     );
