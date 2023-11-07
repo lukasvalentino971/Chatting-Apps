@@ -159,6 +159,18 @@ class MyHomePage extends StatelessWidget {
                     )
                   ],
                 ),
+              )),
+          Positioned(
+              top: 365,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              child: Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(40),
+                        topRight: Radius.circular(40)),
+                    color: Color(0xFFEFFFFC)),
               ))
         ],
       ),
