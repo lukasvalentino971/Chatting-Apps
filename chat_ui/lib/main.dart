@@ -166,12 +166,74 @@ class MyHomePage extends StatelessWidget {
               right: 0,
               bottom: 0,
               child: Container(
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(40),
-                        topRight: Radius.circular(40)),
-                    color: Color(0xFFEFFFFC)),
-              ))
+                  padding: const EdgeInsets.symmetric(vertical: 15),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(40),
+                          topRight: Radius.circular(40)),
+                      color: Color(0xFFEFFFFC)),
+                  child: ListView(
+                    padding: EdgeInsets.only(left: 25),
+                    children: [
+                      Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: const [
+                              Row(
+                                children: [
+                                  const UserAvatar(filename: 'img1.jpeg'),
+                                  SizedBox(
+                                    width: 15,
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: const [
+                                      Text(
+                                        'Lora',
+                                        style: TextStyle(color: Colors.black),
+                                      ),
+                                      SizedBox(
+                                        height: 5,
+                                      ),
+                                      Text(
+                                        'Hello, How are you?',
+                                        style: TextStyle(color: Colors.black),
+                                      )
+                                    ],
+                                  )
+                                ],
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(right: 25, top: 5),
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      '16:35',
+                                      style: TextStyle(fontSize: 10),
+                                    ),
+                                    SizedBox(
+                                      height: 15,
+                                    ),
+                                    CircleAvatar(
+                                      radius: 7,
+                                      backgroundColor: Color(0xFF27c1a9),
+                                      child: Text(
+                                        '2',
+                                        style: TextStyle(
+                                            fontSize: 10, color: Colors.white),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        ],
+                      )
+                    ],
+                  )))
         ],
       ),
     );
